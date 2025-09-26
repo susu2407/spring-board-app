@@ -1,0 +1,38 @@
+logging:
+    file:
+        name: logs/ch08.log
+    level:
+        root: info
+mybatis:
+    mapper-locations: classpath:mappers/**/*.xml
+server:
+    port: 8080
+    servlet:
+        context-path: /sboard
+spring:
+    application:
+        name: sboard
+        version: ${version}
+    datasource:
+        driver-class-name: oracle.jdbc.driver.OracleDriver
+        password: 1234
+        url: jdbc:oracle:thin:@localhost:1521:xe
+        username: tndus159200297
+    devtools:
+        livereload:
+            enabled: true
+    jpa:
+        hibernate:
+            ddl-auto: update
+            naming:
+                physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+        properties:
+            hibernate:
+                format_sql: ture
+                show_sql: ture
+
+    security:
+      user:
+        name: user
+        password: 1234
+        roles: ADMIN

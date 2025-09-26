@@ -7,12 +7,12 @@ import org.springframework.web.bind.annotation.PostMapping;
 @Controller
 public class FindController {
 
-    @PostMapping("/find/changePassword")
+    @GetMapping("/find/changePassword")
     public String changePassword() {
         return "find/changePassword";
     }
 
-    @PostMapping("/find/password")
+    @GetMapping("/find/password")
     public String password() {
         return "find/password";
     }
