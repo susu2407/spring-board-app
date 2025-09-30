@@ -4,7 +4,6 @@ import lombok.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.time.LocalDateTime;
-import java.util.Arrays;
 import java.util.List;
 
 @Getter
@@ -27,7 +26,11 @@ public class ArticleDTO {
     private int hit_cnt;
     private String write;
     private String reg_ip;
-    private LocalDateTime wdate;
+    private String wdate;
+
+    public String getWdate() {
+        return wdate.substring(2, 16).replace("T", " ");
+    }
 
     // 파일 (전송) 업로드 객체
     private MultipartFile file1;
