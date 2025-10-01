@@ -1,5 +1,6 @@
 package kr.co.sboard.dto;
 
+import jakarta.persistence.OneToMany;
 import lombok.*;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -21,10 +22,10 @@ public class ArticleDTO {
 
     private String title;
     private String content;
-    private int content_cnt;
+    private int comment_cnt;
     private int file_cnt;
     private int hit_cnt;
-    private String write;
+    private String writer;
     private String reg_ip;
     private String wdate;
 
@@ -40,4 +41,9 @@ public class ArticleDTO {
     public List<MultipartFile> getFiles() {
         return List.of(file1, file2);
     }
+
+    // 추가필드
+    private String nick;
+
+    private List<FileDTO> fileList;
 }

@@ -41,6 +41,14 @@ public class ArticleService {
 
         Page<Tuple> pageTuple = articleRepository.selectArticleAllForList(pageRequestDTO, pageable);
 
+        if(pageRequestDTO.getSearchType() != null){
+            // 검색 글 목록
+            pageTuple = articleRepository.selectArticleAllForSearch(pageRequestDTO, pageable);
+        }else{
+            // 일반 글 목록
+            pageTuple = articleRepository.selectArticleAllForList(pageRequestDTO, pageable);
+        }
+
         List<Tuple> tupleList = pageTuple.getContent();
         int total = (int) pageTuple.getTotalElements();
 
@@ -49,7 +57,9 @@ public class ArticleService {
                     Article article = tuple.get(0, Article.class);
                     String nick = tuple.get(1, String.class);
                     article.setNick(nick);
+
                     return modelMapper.map(article, ArticleDTO.class);
+
                 })
                 .toList();
 
@@ -64,7 +74,7 @@ public class ArticleService {
     public int save(ArticleDTO articleDTO){
 
         Article article = modelMapper.map(articleDTO, Article.class);
-        Article savedArticle = articleRepository.save(article);
+        Article savedArticle = articleRepository.save(article); // 게시글이 있으면 수정, 없으면 삽입
 
         return savedArticle.getAno();
 
