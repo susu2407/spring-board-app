@@ -8536,3 +8536,8 @@ org.thymeleaf.exceptions.TemplateInputException: Error resolving template [user/
 2025-10-01T17:40:26.219+09:00  INFO 3024 --- [sboard] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/sboard'
 2025-10-01T17:40:26.222+09:00  INFO 3024 --- [sboard] [restartedMain] kr.co.sboard.SboardApplication           : Started SboardApplication in 0.857 seconds (process running for 567.365)
 2025-10-01T17:40:26.223+09:00  INFO 3024 --- [sboard] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-10-01T18:39:32.410+09:00  INFO 3024 --- [sboard] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-10-01T18:39:32.479+09:00  INFO 3024 --- [sboard] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-10-01T18:39:32.482+09:00  INFO 3024 --- [sboard] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-10-01T18:39:32.482+09:00  INFO 3024 --- [sboard] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Shutdown initiated...
+2025-10-01T18:39:32.589+09:00  INFO 3024 --- [sboard] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Shutdown completed.
